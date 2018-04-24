@@ -21,9 +21,21 @@ const updateTeamFailure = function () {
   $('#message').text('Failed to update team!')
   $('#message').css('text-align', 'center')
 }
+
+const deleteTeamSuccess = function () {
+  $('#message').text('Team Deleted!')
+  $('#message').css('text-align', 'center')
+}
+
+const deleteTeamFailure = function () {
+  $('#message').text('Failed to delete team!')
+  $('#message').css('text-align', 'center')
+}
 module.exports = {
   createTeamSuccess,
   createTeamFailure,
   updateTeamSuccess,
-  updateTeamFailure
+  updateTeamFailure,
+  deleteTeamSuccess,
+  deleteTeamFailure
 }
