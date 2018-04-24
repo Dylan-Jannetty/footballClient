@@ -5,7 +5,14 @@ const signUpSuccess = function () {
   $('#message').text('Successfully signed up')
   $('#message').css('background-color', 'green')
   $('#message').css('text-align', 'center')
-  $('#sign-up').addClass('hidden')
+  $('.sign-up').addClass('hidden')
+  $('.sign-in').addClass('hidden')
+  $('.change-password').removeClass('hidden')
+  $('.sign-out').removeClass('hidden')
+  $('.create-team').removeClass('hidden')
+  $('.update-team').removeClass('hidden')
+  $('.delete-team').removeClass('hidden')
+  $('.get-teams').removeClass('hidden')
   $('form').trigger('reset')
 }
 
@@ -20,6 +27,14 @@ const signInSuccess = function (data) {
   $('#message').text('Sign In Success')
   $('#message').css('background-color', 'green')
   $('#message').css('text-align', 'center')
+  $('.sign-in').addClass('hidden')
+  $('.sign-up').addClass('hidden')
+  $('.change-password').removeClass('hidden')
+  $('.sign-out').removeClass('hidden')
+  $('.create-team').removeClass('hidden')
+  $('.update-team').removeClass('hidden')
+  $('.delete-team').removeClass('hidden')
+  $('.get-teams').removeClass('hidden')
   store.user = data.user
   $('form').trigger('reset')
 }
@@ -49,6 +64,14 @@ const signOutSuccess = function () {
   $('#message').text('Signed Out Success!')
   $('#message').css('background-color', 'green')
   $('#message').css('text-align', 'center')
+  $('.change-password').addClass('hidden')
+  $('.create-team').addClass('hidden')
+  $('.update-team').addClass('hidden')
+  $('.delete-team').addClass('hidden')
+  $('.get-teams').addClass('hidden')
+  $('.team-message').addClass('hidden')
+  $('.sign-up').removeClass('hidden')
+  $('.sign-in').removeClass('hidden')
 }
 const signOutFailure = function () {
   $('#message').text('Sign Out Failure')

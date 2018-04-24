@@ -18,7 +18,7 @@
 
 <!-- // form to sign up -->
 <div class="auth text-center">
-      <form id="sign-up" class="border">
+      <form id="sign-up" class="sign-up border">
   <fieldset>
     <legend>sign-up</legend>
     <input type="text" name="credentials[email]" placeholder="Email">
@@ -29,7 +29,7 @@
 </form>
 
 <!-- // form to sign in -->
-<form id="sign-in" class="border">
+<form id="sign-in" class="sign-in border">
   <fieldset>
     <legend>sign-in</legend>
     <input type="text" name="credentials[email]" placeholder="Email">
@@ -39,7 +39,7 @@
 </form>
 
 <!-- // form to change password -->
-<form id="change-password" class="border">
+<form id="change-password" class="change-password border hidden">
   <fieldset>
     <legend>Change Password</legend>
     <input type="password" name="passwords[old]" placeholder="Old Password">
@@ -49,7 +49,7 @@
 </form>
 
 <!-- // form to create team -->
-<form id="create-team" class="border">
+<form id="create-team" class="create-team border hidden">
   <fieldset>
     <legend>Create Team</legend>
     <input type="text" name="team[name]" placeholder="Team">
@@ -59,7 +59,7 @@
 </form>
 
 <!-- // form to update a team -->
-<form id="update-team" class="border">
+<form id="update-team" class="update-team border hidden">
   <fieldset>
     <legend>Update Team</legend>
     <input type="text" name="team[name]" placeholder="new team">
@@ -70,7 +70,7 @@
 </form>
 
 <!-- // form to delete a team -->
-<form id="delete-team" class="border">
+<form id="delete-team" class="delete-team border hidden">
   <fieldset>
     <legend>Delete Team</legend>
     <input type="text" name="team[name]" placeholder="Delete team">
@@ -81,12 +81,12 @@
 </form>
 
 <!-- // button to get teams -->
-<div id="get-teams" class="border text-center"><input type="button" value="Get Teams"></div>
+<div id="get-teams" class="get-teams border hidden"><input type="button" value="Get Teams"></div>
 <!-- // id to list all favorite teams -->
-<p id="team-message"></p>
+<p id="team-message" class="team-message"></p>
 
 <!-- // form to sign out -->
-<form id="sign-out" class="border">
+<form id="sign-out" class="sign-out border hidden">
 <fieldset>
   <legend>Sign out</legend>
   <input type="submit" value="sign out!">
