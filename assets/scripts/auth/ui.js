@@ -21,14 +21,6 @@ const signInSuccess = function (data) {
   $('#message').css('background-color', 'green')
   $('#message').css('text-align', 'center')
   store.user = data.user
-  // hide sign up form
-  $('#sign-up').addClass('hidden')
-  // hide sign in form
-  $('#sign-in').addClass('hidden')
-  // show change password form
-  $('#change-password').removeClass('hidden')
-  // show sign out form
-  $('#sign-out').removeClass('hidden')
   $('form').trigger('reset')
 }
 
@@ -57,14 +49,6 @@ const signOutSuccess = function () {
   $('#message').text('Signed Out Success!')
   $('#message').css('background-color', 'green')
   $('#message').css('text-align', 'center')
-  // hide sign up form
-  $('#sign-up').removeClass('hidden')
-  // hide sign in form
-  $('#sign-in').removeClass('hidden')
-  // show change password form
-  $('#change-password').addClass('hidden')
-  // show sign out form
-  $('#sign-out').addClass('hidden')
 }
 const signOutFailure = function () {
   $('#message').text('Sign Out Failure')
