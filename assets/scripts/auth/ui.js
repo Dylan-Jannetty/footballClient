@@ -6,13 +6,6 @@ const signUpSuccess = function () {
   $('#message').css('background-color', 'green')
   $('#message').css('text-align', 'center')
   $('.sign-up').addClass('hidden')
-  $('.sign-in').addClass('hidden')
-  $('.change-password').removeClass('hidden')
-  $('.sign-out').removeClass('hidden')
-  $('.create-team').removeClass('hidden')
-  $('.update-team').removeClass('hidden')
-  $('.delete-team').removeClass('hidden')
-  $('.get-teams').removeClass('hidden')
   $('form').trigger('reset')
 }
 
