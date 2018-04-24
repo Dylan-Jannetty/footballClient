@@ -31,11 +31,35 @@ const deleteTeamFailure = function () {
   $('#message').text('Failed to delete team!')
   $('#message').css('text-align', 'center')
 }
+
+const getTeamsSuccess = function (data) {
+// declare teamsHtml as empty string
+  let teamsHtml = ''
+  // loop through data.teams declaring team as function name
+  data.teams.forEach((team) => {
+    // teamsHtml = '' + team.name team.location and team.id
+    teamsHtml = teamsHtml + `<p>name: ${team.name}</p>
+        <p>location: ${team.location}</p>
+        <p>ID: ${team.id}</p>`
+    console.log(team.location)
+  })
+  console.log(data)
+  // appends teamHtml to the end of string
+  $('#team-message').append('These are your Favorite teams:' + teamsHtml)
+  $('#team-message').css('text-align', 'center')
+}
+
+const getTeamsFailure = function () {
+  $('#team-message').text('Failed to get your favorite teams!')
+  $('#team-message').css('text-align', 'center')
+}
 module.exports = {
   createTeamSuccess,
   createTeamFailure,
   updateTeamSuccess,
   updateTeamFailure,
   deleteTeamSuccess,
-  deleteTeamFailure
+  deleteTeamFailure,
+  getTeamsSuccess,
+  getTeamsFailure
 }

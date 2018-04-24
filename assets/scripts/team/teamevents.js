@@ -29,10 +29,19 @@ const onDeleteTeam = (event) => {
     .catch(ui.deleteTeamFailure)
 }
 
+const onGetTeams = (event) => {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.getTeams(data)
+    .then(ui.getTeamsSuccess)
+    .catch(ui.getTeamsFailure)
+}
+
 const addHandlers = () => {
   $('#create-team').on('submit', onCreateTeam)
   $('#update-team').on('submit', onUpdateTeam)
   $('#delete-team').on('submit', onDeleteTeam)
+  $('#get-teams').on('click', onGetTeams)
 }
 
 module.exports = {
