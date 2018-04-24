@@ -25,7 +25,7 @@ const signIn = function (data) {
 
 const changePassword = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/change-password/:id',
+    url: config.apiUrl + '/change-password/',
     method: 'PATCH',
     headers: {
       contentType: 'application/json',
@@ -37,9 +37,7 @@ const changePassword = function (data) {
 
 const signOut = function (data) {
   return $.ajax({
-    url: config.apiUrl + `/sign-out/${
-      store.user.id
-    }`,
+    url: config.apiUrl + `/sign-out/`,
     method: 'DELETE',
     headers: {
       contentType: 'application/json',

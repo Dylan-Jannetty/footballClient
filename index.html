@@ -16,10 +16,6 @@
 
       <h1 class="text-center">Football Teams</h1>
 
-<div id="new-game" class="border text-center hidden"><input type="submit" value="New Game"></div>
-
-<div id="get-game" class="border text-center hidden"><input type="submit" value="Get Games"></div>
-
 <!-- // form to sign up -->
 <div class="auth text-center">
       <form id="sign-up" class="border">
@@ -49,6 +45,15 @@
     <input type="password" name="passwords[old]" placeholder="Old Password">
     <input type="password" name="passwords[new]" placeholder="New Password">
     <input type="submit" value="Change Password!">
+  </fieldset>
+</form>
+
+<form id="create-team" class="border">
+  <fieldset>
+    <legend>Create Team</legend>
+    <input type="text" name="team[name]" placeholder="Team">
+    <input type="text" name="team[location]" placeholder="Location">
+    <input type="submit" value="Create a Team!">
   </fieldset>
 </form>
 

@@ -5,6 +5,7 @@ const signUpSuccess = function () {
   $('#message').text('Successfully signed up')
   $('#message').css('background-color', 'green')
   $('#message').css('text-align', 'center')
+  $('#sign-up').addClass('hidden')
   $('form').trigger('reset')
 }
 
@@ -19,8 +20,16 @@ const signInSuccess = function (data) {
   $('#message').text('Sign In Success')
   $('#message').css('background-color', 'green')
   $('#message').css('text-align', 'center')
-  $('form').trigger('reset')
   store.user = data.user
+  // hide sign up form
+  $('#sign-up').addClass('hidden')
+  // hide sign in form
+  $('#sign-in').addClass('hidden')
+  // show change password form
+  $('#change-password').removeClass('hidden')
+  // show sign out form
+  $('#sign-out').removeClass('hidden')
+  $('form').trigger('reset')
 }
 
 const signInFailure = function () {
@@ -48,13 +57,19 @@ const signOutSuccess = function () {
   $('#message').text('Signed Out Success!')
   $('#message').css('background-color', 'green')
   $('#message').css('text-align', 'center')
-  $('form').trigger('reset')
+  // hide sign up form
+  $('#sign-up').removeClass('hidden')
+  // hide sign in form
+  $('#sign-in').removeClass('hidden')
+  // show change password form
+  $('#change-password').addClass('hidden')
+  // show sign out form
+  $('#sign-out').addClass('hidden')
 }
 const signOutFailure = function () {
   $('#message').text('Sign Out Failure')
   $('#message').css('background-color', 'red')
   $('#message').css('text-align', 'center')
-  $('form').trigger('reset')
 }
 
 module.exports = {
