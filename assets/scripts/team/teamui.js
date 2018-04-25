@@ -64,7 +64,9 @@ const getTeamsSuccess = function (data) {
     })
   })
   $('#team-message').css('text-align', 'center')
+  $('#team-message').removeClass('hidden')
   $('.hide-teams').removeClass('hidden')
+  $('.hide-teams').show()
 }
 
 const getTeamsFailure = function () {

@@ -13,24 +13,25 @@
     </head>
     <body>
 
+
       <nav class="navbar">
         <h1 class="header text-center">Football Teams</h1>
         <!-- // form to change password -->
-        <form id="change-password" class="change-password border hidden">
+        <form id="change-password" class="change-password border hidden navbar-form navbar-left">
           <fieldset>
             <legend class="changePwLegend">Change Password</legend>
-            <input type="password" name="passwords[old]" placeholder="Old Password">
-            <input type="password" name="passwords[new]" placeholder="New Password">
+            <input type="password" name="passwords[old]" placeholder="Old Password" required>
+            <input type="password" name="passwords[new]" placeholder="New Password" required>
             <input type="submit" value="Change Password!">
           </fieldset>
         </form>
         <!-- // form to update a team -->
-        <form id="update-team" class="update-team border hidden">
+        <form id="update-team" class="update-team border hidden navbar-form navbar-right">
           <fieldset>
             <legend class="updateTeamLegend">Update Team</legend>
-            <input type="text" name="team[name]" placeholder="new team">
-            <input type="text" name="team[location]" placeholder="New location">
-            <input type="number" name="id" placeholder="ID">
+            <input type="text" name="team[name]" placeholder="new team" required>
+            <input type="text" name="team[location]" placeholder="New location" required>
+            <input type="number" name="id" placeholder="ID" required>
             <input type="submit" value="Update Team">
           </fieldset>
         </form>
@@ -51,9 +52,9 @@
             <form id="sign-up" class="sign-up border">
         <fieldset>
           <legend>sign-up</legend>
-          <input type="text" name="credentials[email]" placeholder="Email">
-          <input type="password" name="credentials[password]" placeholder="Password">
-          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+          <input type="text" name="credentials[email]" placeholder="Email" required>
+          <input type="password" name="credentials[password]" placeholder="Password" required>
+          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" required>
           <input type="submit" value="Sign Up!">
         </fieldset>
       </form>
@@ -72,8 +73,8 @@
       <form id="sign-in" class="sign-in border">
         <fieldset>
           <legend>sign-in</legend>
-          <input type="text" name="credentials[email]" placeholder="Email">
-          <input type="password" name="credentials[password]" placeholder="Password">
+          <input type="text" name="credentials[email]" placeholder="Email" required>
+          <input type="password" name="credentials[password]" placeholder="Password" required>
           <input type="submit" value="Sign In!">
         </fieldset>
       </form>
@@ -85,28 +86,17 @@
 <form id="create-team" class="create-team border hidden">
   <fieldset>
     <legend>Create Team</legend>
-    <input type="text" name="team[name]" placeholder="Team">
-    <input type="text" name="team[location]" placeholder="Location">
+    <input type="text" name="team[name]" placeholder="Team" required>
+    <input type="text" name="team[location]" placeholder="Location" required>
     <input type="submit" value="Create a Team!">
   </fieldset>
 </form>
 
-
-<!-- // form to delete a team -->
-<!-- <form id="delete-team" class="delete-team border hidden">
-  <fieldset>
-    <legend>Delete Team</legend>
-    <input type="text" name="team[name]" placeholder="Delete team">
-    <input type="text" name="team[location]" placeholder="Delete location">
-    <input type="number" name="id" placeholder="ID">
-    <input type="submit" value="Delete Team">
-  </fieldset>
-</form> -->
-
 <!-- // button to get teams -->
 <div id="get-teams" class="get-teams border hidden"><input type="button" value="Get Teams"></div>
 <!-- // id to list all favorite teams -->
-<p id="team-message" class="team-message"></p>
+<p id="team-message" class="team-message hidden"></p>
+<!-- // button to hide teams -->
 <div id="hide-teams" class="hide-teams border hidden"><input type="button" value="Hide Teams"></div>
 
 <!-- // form to sign out -->

@@ -67,6 +67,8 @@ const signOutSuccess = function () {
   $('.get-teams').addClass('hidden')
   $('.team-message').addClass('hidden')
   $('.sign-out').addClass('hidden')
+  $('#hide-teams').hide()
+  $('#team-message').addClass('hidden')
   $('.sign-up').removeClass('hidden')
   $('.sign-in').removeClass('hidden')
   $('.sign-up-modal').removeClass('hidden')
