@@ -17,16 +17,36 @@
       <nav class="navbar">
         <h1 class="header text-center">Football Teams</h1>
         <!-- // form to change password -->
-        <form id="change-password" class="change-password border hidden navbar-form navbar-left">
+        <div class="dropdown hidden">
+          <button class="btn btn-default dropdown-toggle" type="button" id="changeDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Change Password
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a href="#">
+            <form id="change-password" class="change-password border hidden navbar-form">
+              <fieldset>
+                <legend class="changePwLegend">Change Password</legend>
+                <input type="password" name="passwords[old]" placeholder="Old Password" required>
+                <input type="password" name="passwords[new]" placeholder="New Password" required>
+                <input type="submit" value="Change Password!">
+              </fieldset>
+            </form></a>
+          </li>
+        </ul>
+      </div>
+        <!-- <form id="change-password" class="change-password border hidden navbar-form navbar-left">
           <fieldset>
             <legend class="changePwLegend">Change Password</legend>
             <input type="password" name="passwords[old]" placeholder="Old Password" required>
             <input type="password" name="passwords[new]" placeholder="New Password" required>
             <input type="submit" value="Change Password!">
           </fieldset>
-        </form>
+        </form> -->
+
         <!-- // form to update a team -->
-        <form id="update-team" class="update-team border hidden navbar-form navbar-right">
+
+        <!-- <form id="update-team" class="update-team border hidden navbar-form navbar-right">
           <fieldset>
             <legend class="updateTeamLegend">Update Team</legend>
             <input type="text" name="team[name]" placeholder="new team" required>
@@ -34,7 +54,26 @@
             <input type="number" name="id" placeholder="ID" required>
             <input type="submit" value="Update Team">
           </fieldset>
-        </form>
+        </form> -->
+        <div class="dropdown hidden">
+          <button class="btn btn-default dropdown-toggle" type="button" id="updateDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Update Team
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a href="#">
+              <form id="update-team" class="update-team border hidden navbar-form">
+              <fieldset>
+                <legend class="updateTeamLegend">Update Team</legend>
+                <input type="text" name="team[name]" placeholder="new team" required>
+                <input type="text" name="team[location]" placeholder="New location" required>
+                <input type="number" name="id" placeholder="ID" required>
+                <input type="submit" value="Update Team">
+              </fieldset>
+            </form></a>
+          </li>
+          </ul>
+        </div>
       </nav>
 
       <p id="message"></p>
@@ -47,6 +86,7 @@
       <div class="signUpModal modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
         <div class="modal-dialog modal-lg" role="document">
           <div class="modal-content">
+            <p class="modalMessage"></p>
             <!-- // form to sign up -->
 
             <form id="sign-up" class="sign-up border">
@@ -92,6 +132,8 @@
   </fieldset>
 </form>
 
+<h4 class="favTeams hidden">Click "get teams" to see your favorite teams!</h4>
+<span class="glyphicon glyphicon-hand-down hidden" aria-hidden="true"></span>
 <!-- // button to get teams -->
 <div id="get-teams" class="get-teams border hidden"><input type="button" value="Get Teams"></div>
 <!-- // id to list all favorite teams -->
@@ -100,12 +142,14 @@
 <div id="hide-teams" class="hide-teams border hidden"><input type="button" value="Hide Teams"></div>
 
 <!-- // form to sign out -->
+<footer>
 <form id="sign-out" class="sign-out border hidden">
 <fieldset>
   <legend>Sign out</legend>
   <input type="submit" value="sign out!">
 </fieldset>
 </form>
+</footer>
 </div>
     </body>
 </html>

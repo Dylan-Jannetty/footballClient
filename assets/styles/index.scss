@@ -9,7 +9,29 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   margin-top: 300px;
 }
 
-.update-team .change-password {
-  float: left;
+.get-teams {
+  margin-bottom: 60px;
+}
+
+.hide-teams {
+  margin: 60px;
+}
+
+.navbar {
+  background-color: #ccc;
+}
+
+.Team {
+  color: red;
+}
+
+.favTeams {
+  text-decoration: underline;
+  margin-top: 30px;
+}
+
+.dropdown {
   display: inline-block;
+  position: static;
+  margin-right: auto;
 }

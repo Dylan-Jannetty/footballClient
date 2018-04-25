@@ -47,6 +47,9 @@ const addHandlers = () => {
     $('.Team').toggle()
     $('.hide-teams').addClass('hidden')
   })
+  $('.modal').on('hidden.bs.modal', function (e) {
+    $('input[type="email"], input[type="password"], input[type="text"], input[type="date"], input[type="number"], textarea').val('')
+  })
 }
 
 module.exports = {
