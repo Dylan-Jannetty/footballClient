@@ -11,4 +11,9 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 .update-team .change-password {
   float: left;
+  display: inline-block;
+}
+
+.header .changePwLegend .updateTeamLegend {
+  color: white;
 }

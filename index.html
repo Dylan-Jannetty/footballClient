@@ -13,12 +13,12 @@
     </head>
     <body>
 
-      <nav class="navbar navbar-inverse">
-        <h1 class="text-center">Football Teams</h1>
+      <nav class="navbar">
+        <h1 class="header text-center">Football Teams</h1>
         <!-- // form to change password -->
         <form id="change-password" class="change-password border hidden">
           <fieldset>
-            <legend>Change Password</legend>
+            <legend class="changePwLegend">Change Password</legend>
             <input type="password" name="passwords[old]" placeholder="Old Password">
             <input type="password" name="passwords[new]" placeholder="New Password">
             <input type="submit" value="Change Password!">
@@ -27,7 +27,7 @@
         <!-- // form to update a team -->
         <form id="update-team" class="update-team border hidden">
           <fieldset>
-            <legend>Update Team</legend>
+            <legend class="updateTeamLegend">Update Team</legend>
             <input type="text" name="team[name]" placeholder="new team">
             <input type="text" name="team[location]" placeholder="New location">
             <input type="number" name="id" placeholder="ID">
