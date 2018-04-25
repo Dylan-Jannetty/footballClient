@@ -6,6 +6,7 @@ const signUpSuccess = function () {
   $('#message').css('background-color', 'green')
   $('#message').css('text-align', 'center')
   $('.sign-up').addClass('hidden')
+  $('.sign-up-modal').addClass('hidden')
   $('form').trigger('reset')
 }
 
@@ -22,6 +23,8 @@ const signInSuccess = function (data) {
   $('#message').css('text-align', 'center')
   $('.sign-in').addClass('hidden')
   $('.sign-up').addClass('hidden')
+  $('.sign-up-modal').addClass('hidden')
+  $('.sign-in-modal').addClass('hidden')
   $('.change-password').removeClass('hidden')
   $('.sign-out').removeClass('hidden')
   $('.create-team').removeClass('hidden')
@@ -63,8 +66,11 @@ const signOutSuccess = function () {
   $('.delete-team').addClass('hidden')
   $('.get-teams').addClass('hidden')
   $('.team-message').addClass('hidden')
+  $('.sign-out').addClass('hidden')
   $('.sign-up').removeClass('hidden')
   $('.sign-in').removeClass('hidden')
+  $('.sign-up-modal').removeClass('hidden')
+  $('.sign-in-modal').removeClass('hidden')
 }
 const signOutFailure = function () {
   $('#message').text('Sign Out Failure')

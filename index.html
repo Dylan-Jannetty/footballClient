@@ -12,41 +12,74 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+
+      <nav class="navbar navbar-inverse">
+        <h1 class="text-center">Football Teams</h1>
+        <!-- // form to change password -->
+        <form id="change-password" class="change-password border hidden">
+          <fieldset>
+            <legend>Change Password</legend>
+            <input type="password" name="passwords[old]" placeholder="Old Password">
+            <input type="password" name="passwords[new]" placeholder="New Password">
+            <input type="submit" value="Change Password!">
+          </fieldset>
+        </form>
+        <!-- // form to update a team -->
+        <form id="update-team" class="update-team border hidden">
+          <fieldset>
+            <legend>Update Team</legend>
+            <input type="text" name="team[name]" placeholder="new team">
+            <input type="text" name="team[location]" placeholder="New location">
+            <input type="number" name="id" placeholder="ID">
+            <input type="submit" value="Update Team">
+          </fieldset>
+        </form>
+      </nav>
+
       <p id="message"></p>
 
-      <h1 class="text-center">Football Teams</h1>
+      <div class="auth text-center">
 
-<!-- // form to sign up -->
-<div class="auth text-center">
-      <form id="sign-up" class="sign-up border">
-  <fieldset>
-    <legend>sign-up</legend>
-    <input type="text" name="credentials[email]" placeholder="Email">
-    <input type="password" name="credentials[password]" placeholder="Password">
-    <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-    <input type="submit" value="Sign Up!">
-  </fieldset>
-</form>
+      <!-- Large modal -->
+      <button type="button" class="btn btn-primary sign-up-modal" data-toggle="modal" data-target=".signUpModal">Sign Up!</button>
 
-<!-- // form to sign in -->
-<form id="sign-in" class="sign-in border">
-  <fieldset>
-    <legend>sign-in</legend>
-    <input type="text" name="credentials[email]" placeholder="Email">
-    <input type="password" name="credentials[password]" placeholder="Password">
-    <input type="submit" value="Sign In!">
-  </fieldset>
-</form>
+      <div class="signUpModal modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <!-- // form to sign up -->
 
-<!-- // form to change password -->
-<form id="change-password" class="change-password border hidden">
-  <fieldset>
-    <legend>Change Password</legend>
-    <input type="password" name="passwords[old]" placeholder="Old Password">
-    <input type="password" name="passwords[new]" placeholder="New Password">
-    <input type="submit" value="Change Password!">
-  </fieldset>
-</form>
+            <form id="sign-up" class="sign-up border">
+        <fieldset>
+          <legend>sign-up</legend>
+          <input type="text" name="credentials[email]" placeholder="Email">
+          <input type="password" name="credentials[password]" placeholder="Password">
+          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+          <input type="submit" value="Sign Up!">
+        </fieldset>
+      </form>
+          </div>
+        </div>
+      </div>
+
+
+<!-- Large modal -->
+<button type="button" class="btn btn-primary sign-in-modal" data-toggle="modal" data-target=".signInModal">Sign In!</button>
+
+<div class="signInModal modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <!-- // form to sign in -->
+      <form id="sign-in" class="sign-in border">
+        <fieldset>
+          <legend>sign-in</legend>
+          <input type="text" name="credentials[email]" placeholder="Email">
+          <input type="password" name="credentials[password]" placeholder="Password">
+          <input type="submit" value="Sign In!">
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
 
 <!-- // form to create team -->
 <form id="create-team" class="create-team border hidden">
@@ -58,19 +91,9 @@
   </fieldset>
 </form>
 
-<!-- // form to update a team -->
-<form id="update-team" class="update-team border hidden">
-  <fieldset>
-    <legend>Update Team</legend>
-    <input type="text" name="team[name]" placeholder="new team">
-    <input type="text" name="team[location]" placeholder="New location">
-    <input type="number" name="id" placeholder="ID">
-    <input type="submit" value="Update Team">
-  </fieldset>
-</form>
 
 <!-- // form to delete a team -->
-<form id="delete-team" class="delete-team border hidden">
+<!-- <form id="delete-team" class="delete-team border hidden">
   <fieldset>
     <legend>Delete Team</legend>
     <input type="text" name="team[name]" placeholder="Delete team">
@@ -78,12 +101,13 @@
     <input type="number" name="id" placeholder="ID">
     <input type="submit" value="Delete Team">
   </fieldset>
-</form>
+</form> -->
 
 <!-- // button to get teams -->
 <div id="get-teams" class="get-teams border hidden"><input type="button" value="Get Teams"></div>
 <!-- // id to list all favorite teams -->
 <p id="team-message" class="team-message"></p>
+<div id="hide-teams" class="hide-teams border hidden"><input type="button" value="Hide Teams"></div>
 
 <!-- // form to sign out -->
 <form id="sign-out" class="sign-out border hidden">

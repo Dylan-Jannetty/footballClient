@@ -27,32 +27,44 @@ const updateTeamFailure = function () {
 }
 
 const deleteTeamSuccess = function () {
+  console.log('deleted')
   $('#message').text('Team Deleted!')
   $('#message').css('text-align', 'center')
+  $('.Team').addClass('hidden')
   $('form').trigger('reset')
 }
 
 const deleteTeamFailure = function () {
+  console.log('failed')
   $('#message').text('Failed to delete team!')
   $('#message').css('text-align', 'center')
   $('form').trigger('reset')
 }
 
 const getTeamsSuccess = function (data) {
-// declare teamsHtml as empty string
-  let teamsHtml = ''
+  $('#team-message').empty()
   // loop through data.teams declaring team as function name
   data.teams.forEach((team) => {
-    // teamsHtml = '' + team.name team.location and team.id
-    teamsHtml = teamsHtml + `<p>name: ${team.name}</p>
+    const teamsHtml = `
+      <div class="Team">
+        <p>name: ${team.name}</p>
         <p>location: ${team.location}</p>
-        <p>ID: ${team.id}</p>`
-    console.log(team.location)
+        <p>ID: ${team.id}</p>
+        <form id="delete-team-${team.id}" class="delete-team border">
+          <fieldset>
+            <input type="hidden" name="id" placeholder="ID" value="${team.id}">
+            <input id="button-${team.id}" type="submit" value="Delete Team">
+          </fieldset>
+        </form>
+      </div>`
+    // appends teamHtml to the end of string
+    $('#team-message').append(teamsHtml)
+    $(`#delete-team-${team.id}`).on('submit', () => {
+      // Do the delete ajax
+    })
   })
-  console.log(data)
-  // appends teamHtml to the end of string
-  $('#team-message').append('These are your Favorite teams:' + teamsHtml)
   $('#team-message').css('text-align', 'center')
+  $('.hide-teams').removeClass('hidden')
 }
 
 const getTeamsFailure = function () {
