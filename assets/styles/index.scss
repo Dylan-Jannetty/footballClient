@@ -1,12 +1,13 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One');
 
 .sign-up-modal {
-  margin-top: 300px;
+  margin-top: 100px;
 }
 
 .sign-in-modal {
-  margin-top: 300px;
+  margin-top: 100px;
 }
 
 .get-teams {
@@ -19,6 +20,12 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 .navbar {
   background-color: #ccc;
+  background-image: url(https://i.imgur.com/4u0FBSS.jpg);
+  padding: 55px;
+  background-size: contain;
+  background-repeat: round;
+  background-position: center;
+  border: none;
 }
 
 .Team {
@@ -28,10 +35,36 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 .favTeams {
   text-decoration: underline;
   margin-top: 30px;
+  color: #ffd700;
 }
 
 .dropdown {
   display: inline-block;
   position: static;
-  margin-right: auto;
+}
+
+.header {
+  color: #ffd700;
+  font-family: 'Alfa Slab One', cursive;
+  font-size: 70px;
+}
+
+body {
+  background-image: url(https://i.imgur.com/8IGr6tl.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom: 400px;
+}
+
+.teamH {
+  color: #ffd700;
+}
+
+.glyphicon {
+  color: #ffd700;
+}
+
+.sign-out {
+  float: right;
 }
