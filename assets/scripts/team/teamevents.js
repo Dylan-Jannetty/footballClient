@@ -29,8 +29,8 @@ const onDeleteTeam = (event) => {
 
 const onGetTeams = (event) => {
   event.preventDefault()
-  const data = getFormFields(event.target)
-  api.getTeams(data)
+  // const data = getFormFields(event.target)
+  api.getTeams()
     .then(ui.getTeamsSuccess)
     .catch(ui.getTeamsFailure)
 }
@@ -39,10 +39,6 @@ const addHandlers = () => {
   $('#create-team').on('submit', onCreateTeam)
   $('#update-team').on('submit', onUpdateTeam)
   $('body').on('submit', '.delete-team', onDeleteTeam)
-  $('.deleteTeam').on('click', () => {
-    $('.Team').toggle()
-    $('.Team').show()
-  })
   $('#get-teams').on('click', onGetTeams)
   $('#hide-teams').on('click', () => {
     $('.Team').toggle()

@@ -76,7 +76,7 @@ const getTeamsSuccess = function (data) {
         <form id="delete-team-${team.id}" class="delete-team border">
           <fieldset>
             <input type="hidden" name="id" placeholder="ID" value="${team.id}">
-            <input id="button-${team.id}" type="submit" value="Delete Team">
+            <input id="button-${team.id}" type="submit" value="Delete Team"
           </fieldset>
         </form>
       </div>`

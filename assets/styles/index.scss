@@ -43,6 +43,10 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   position: static;
 }
 
+.dropdown-menu {
+  color: #b0b0b0;
+}
+
 .header {
   color: #ffd700;
   font-family: 'Alfa Slab One', cursive;
@@ -63,6 +67,7 @@ body {
 
 .glyphicon {
   color: #ffd700;
+  font-size: 20px;
 }
 
 .sign-out {

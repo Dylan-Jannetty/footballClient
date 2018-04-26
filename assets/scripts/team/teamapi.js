@@ -39,15 +39,14 @@ const deleteTeam = function (data) {
   })
 }
 
-const getTeams = function (data) {
+const getTeams = function () {
   return $.ajax({
     url: config.apiUrl + '/teams',
     method: 'GET',
     headers: {
       contentType: 'application/json',
       Authorization: 'Token token=' + store.user.token
-    },
-    data: data
+    }
   })
 }
 
