@@ -39,15 +39,7 @@ const addHandlers = () => {
   $('#create-team').on('submit', onCreateTeam)
   $('#update-team').on('submit', onUpdateTeam)
   $('body').on('submit', '.delete-team', onDeleteTeam)
-  $('.deleteTeam').on('click', () => {
-    $('.Team').toggle()
-    $('.Team').show()
-  })
   $('#get-teams').on('click', onGetTeams)
-  $('#hide-teams').on('click', () => {
-    $('.Team').toggle()
-    $('.hide-teams').addClass('hidden')
-  })
   $('.modal').on('hidden.bs.modal', function (e) {
     $('input[type="email"], input[type="password"], input[type="text"], input[type="date"], input[type="number"], textarea').val('')
   })
