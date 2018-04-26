@@ -2,7 +2,7 @@
 const store = require('../store')
 
 const signUpSuccess = function () {
-  $('#message').text('Successfully signed up')
+  $('#message').html(`<div class="alert alert-success" role="alert">You have succesfully signed up, now sign in!</div>`)
   $('#message').css('background-color', 'green')
   $('#message').css('text-align', 'center')
   setTimeout(() => {
@@ -16,7 +16,7 @@ const signUpSuccess = function () {
 }
 
 const signUpFailure = function () {
-  $('#message').text('Failure signing up')
+  $('#message').html(`<div class="alert alert-danger" role="alert">Failed to sign up</div>`)
   $('#message').css('background-color', 'red')
   $('#message').css('text-align', 'center')
   setTimeout(() => {
@@ -27,7 +27,7 @@ const signUpFailure = function () {
 }
 
 const signInSuccess = function (data) {
-  $('#message').text('Sign In Success')
+  $('#message').html(`<div class="alert alert-success" role="alert">You have succesfully signed in</div>`)
   $('#message').css('background-color', 'green')
   $('#message').css('text-align', 'center')
   setTimeout(() => {
@@ -54,7 +54,7 @@ const signInSuccess = function (data) {
 }
 
 const signInFailure = function () {
-  $('#message').text('Failure signing in')
+  $('#message').html(`<div class="alert alert-danger" role="alert">There was an issue signing in</div>`)
   $('#message').css('background-color', 'red')
   $('#message').css('text-align', 'center')
   setTimeout(() => {
@@ -65,7 +65,7 @@ const signInFailure = function () {
 }
 
 const changePasswordSuccess = function () {
-  $('#message').text('Successfully changed password')
+  $('#message').html(`<div class="alert alert-success" role="alert">Password succesfully changed</div>`)
   $('#message').css('background-color', 'green')
   $('#message').css('text-align', 'center')
   setTimeout(() => {
@@ -76,7 +76,7 @@ const changePasswordSuccess = function () {
 }
 
 const changePasswordFailure = function () {
-  $('#message').text('Change password failure')
+  $('#message').html(`<div class="alert alert-danger" role="alert">There was an issue changing your password</div>`)
   $('#message').css('background-color', 'red')
   $('#message').css('text-align', 'center')
   setTimeout(() => {
@@ -87,7 +87,7 @@ const changePasswordFailure = function () {
 }
 
 const signOutSuccess = function () {
-  $('#message').text('Signed Out Success!')
+  $('#message').html(`<div class="alert alert-success" role="alert">Successfully signed out</div>`)
   $('#message').css('background-color', 'green')
   $('#message').css('text-align', 'center')
   setTimeout(() => {
@@ -112,7 +112,7 @@ const signOutSuccess = function () {
   $('.sign-in-modal').removeClass('hidden')
 }
 const signOutFailure = function () {
-  $('#message').text('Sign Out Failure')
+  $('#message').html(`<div class="alert alert-danger" role="alert">There was an issue signing out</div>`)
   $('#message').css('background-color', 'red')
   $('#message').css('text-align', 'center')
   setTimeout(() => {

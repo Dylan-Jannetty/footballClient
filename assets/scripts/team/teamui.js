@@ -3,42 +3,65 @@
 
 const createTeamSuccess = function (data) {
   console.log(data)
-  $('#message').text('Team Created!')
+  $('#message').html(`<div class="alert alert-success" role="alert">Your team has been created</div>`)
   $('#message').css('text-align', 'center')
   $('form').trigger('reset')
+  setTimeout(() => {
+    $('#message').html('')
+  }, 3000
+  )
 }
 
 const createTeamFailure = function () {
-  $('#message').text('Create some of your favorite teams!')
+  $('#message').html(`<div class="alert alert-danger" role="alert">There was an issue creating your team</div>`)
   $('#message').css('text-align', 'center')
   $('form').trigger('reset')
+  setTimeout(() => {
+    $('#message').html('')
+  }, 3000
+  )
 }
 
 const updateTeamSuccess = function (data) {
-  $('#message').text('Team Updated!')
+  $('#message').html(`<div class="alert alert-success" role="alert">Your team has been updated</div>`)
   $('#message').css('text-align', 'center')
   $('form').trigger('reset')
+  setTimeout(() => {
+    $('#message').html('')
+  }, 3000
+  )
 }
 
 const updateTeamFailure = function () {
-  $('#message').text('Failed to update team!')
+  $('#message').html(`<div class="alert alert-danger" role="alert">There was an issue updating your team</div>`)
   $('#message').css('text-align', 'center')
   $('form').trigger('reset')
+  setTimeout(() => {
+    $('#message').html('')
+  }, 3000
+  )
 }
 
 const deleteTeamSuccess = function () {
-  console.log('deleted')
-  $('#message').text('Team Deleted!')
+  $('#message').html(`<div class="alert alert-success" role="alert">That team has been deleted</div>`)
   $('#message').css('text-align', 'center')
   $('.Team').addClass('hidden')
   $('form').trigger('reset')
+  setTimeout(() => {
+    $('#message').html('')
+  }, 3000
+  )
 }
 
 const deleteTeamFailure = function () {
   console.log('failed')
-  $('#message').text('Failed to delete team!')
+  $('#message').html(`<div class="alert alert-danger" role="alert">There was an issue deleting your team</div>`)
   $('#message').css('text-align', 'center')
   $('form').trigger('reset')
+  setTimeout(() => {
+    $('#message').html('')
+  }, 3000
+  )
 }
 
 const getTeamsSuccess = function (data) {
@@ -70,8 +93,12 @@ const getTeamsSuccess = function (data) {
 }
 
 const getTeamsFailure = function () {
-  $('#team-message').text('Failed to get your favorite teams!')
+  $('#message').html(`<div class="alert alert-danger" role="alert">There was an issue getting your teams</div>`)
   $('#team-message').css('text-align', 'center')
+  setTimeout(() => {
+    $('#message').html('')
+  }, 3000
+  )
 }
 module.exports = {
   createTeamSuccess,
