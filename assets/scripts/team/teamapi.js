@@ -15,7 +15,6 @@ const createTeam = function (data) {
 }
 
 const updateTeam = (data) => {
-  console.log(data)
   return $.ajax({
     url: config.apiUrl + `/teams/` + data.id,
     method: 'PATCH',
