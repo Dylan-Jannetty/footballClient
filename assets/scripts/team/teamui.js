@@ -2,7 +2,6 @@
 // const store = require('../store')
 
 const createTeamSuccess = function (data) {
-  console.log(data)
   $('#message').html(`<div class="alert alert-success" role="alert">Your team has been created</div>`)
   $('#message').css('text-align', 'center')
   $('form').trigger('reset')
@@ -54,7 +53,6 @@ const deleteTeamSuccess = function () {
 }
 
 const deleteTeamFailure = function () {
-  console.log('failed')
   $('#message').html(`<div class="alert alert-danger" role="alert">There was an issue deleting your team</div>`)
   $('#message').css('text-align', 'center')
   $('form').trigger('reset')
