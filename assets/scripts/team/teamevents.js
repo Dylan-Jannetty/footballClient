@@ -24,6 +24,7 @@ const onDeleteTeam = (event) => {
   const data = getFormFields(event.target)
   api.deleteTeam(data)
     .then(ui.deleteTeamSuccess)
+    .then(api.getTeams)
     .catch(ui.deleteTeamFailure)
 }
 
