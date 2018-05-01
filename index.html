@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Football Teams</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+
+
+      <nav class="navbar">
+        <h1 class="header text-center">Football Teams</h1>
+        <!-- // form to sign out -->
+<button id="sign-out" type="button" class="sign-out btn btn-primary btn-lg active hidden">Sign Out</button>
+
+        <!-- // form to change password -->
+        <div class="dropdown hidden">
+          <button class="btn btn-default dropdown-toggle" type="button" id="changeDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Change Password
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a href="#">
+            <form id="change-password" class="change-password border hidden navbar-form">
+              <fieldset>
+                <legend class="changePwLegend">Change Password</legend>
+                <input type="password" name="passwords[old]" placeholder="Old Password" required>
+                <input type="password" name="passwords[new]" placeholder="New Password" required>
+                <input type="submit" value="Change Password!">
+              </fieldset>
+            </form></a>
+          </li>
+        </ul>
+      </div>
+        <div class="dropdown hidden">
+          <button class="btn btn-default dropdown-toggle" type="button" id="updateDropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Update Team
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a href="#">
+              <form id="update-team" class="update-team border hidden navbar-form">
+              <fieldset>
+                <legend class="updateTeamLegend">Update Team</legend>
+                <input type="text" name="team[name]" placeholder="new team" required>
+                <input type="text" name="team[location]" placeholder="New location" required>
+                <input type="number" name="id" placeholder="ID" required>
+                <input type="submit" value="Update Team">
+              </fieldset>
+            </form></a>
+          </li>
+          </ul>
+        </div>
+        </nav>
+
+
+      <p id="message"></p>
+
+      <div class="auth text-center">
+
+      <!-- Large modal -->
+      <button type="button" class="btn btn-primary sign-up-modal" data-toggle="modal" data-target=".signUpModal">Sign Up!</button>
+
+      <div class="signUpModal modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <p class="modalMessage"></p>
+            <!-- // form to sign up -->
+
+            <form id="sign-up" class="sign-up border">
+        <fieldset>
+          <legend>sign-up</legend>
+          <input type="text" name="credentials[email]" placeholder="Email" required>
+          <input type="password" name="credentials[password]" placeholder="Password" required>
+          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" required>
+          <input type="submit" value="Sign Up!">
+        </fieldset>
+      </form>
+          </div>
+        </div>
+      </div>
+
+
+<!-- Large modal -->
+<button type="button" class="btn btn-primary sign-in-modal" data-toggle="modal" data-target=".signInModal">Sign In!</button>
+
+<div class="signInModal modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <!-- // form to sign in -->
+      <form id="sign-in" class="sign-in border">
+        <fieldset>
+          <legend>sign-in</legend>
+
+          <input type="text" name="credentials[email]" placeholder="Email" required>
+          <input type="password" name="credentials[password]" placeholder="Password" required>
+          <input type="submit" value="Sign In!">
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- // form to create team -->
+<form id="create-team" class="create-team border hidden">
+  <fieldset>
+    <h3 class="teamH">Create Team</h3>
+    <input type="text" name="team[name]" placeholder="Team" required>
+    <input type="text" name="team[location]" placeholder="Location" required>
+    <input type="submit" value="Create a Team!">
+  </fieldset>
+</form>
+
+<h4 class="favTeams hidden">Click "get teams" to see your favorite teams!</h4>
+<span class="glyphicon glyphicon-hand-down hidden" aria-hidden="true"></span>
+<!-- // button to get teams -->
+<div id="get-teams" class="get-teams border hidden"><input type="button" value="Get Teams"></div>
+<!-- // id to list all favorite teams -->
+<p id="team-message" class="team-message hidden"></p>
+<!-- // button to hide teams -->
+<div id="hide-teams" class="hide-teams border hidden"><input type="button" value="Hide Teams"></div>
+
+</div>
+    </body>
+</html>
