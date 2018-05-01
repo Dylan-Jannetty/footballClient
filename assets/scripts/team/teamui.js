@@ -22,8 +22,8 @@ const createTeamFailure = function () {
 }
 
 const updateTeamSuccess = function (data) {
-  $('#message').html(`<div class="alert alert-success" role="alert">Your team has been updated</div>`)
-  $('#message').css('text-align', 'center')
+  $('#team-message').html(`<div class="alert alert-success" role="alert">Your team has been updated</div>`)
+  $('#team-message').css('text-align', 'center')
   $('form').trigger('reset')
   setTimeout(() => {
     $('#message').html('')
@@ -32,8 +32,8 @@ const updateTeamSuccess = function (data) {
 }
 
 const updateTeamFailure = function () {
-  $('#message').html(`<div class="alert alert-danger" role="alert">There was an issue updating your team</div>`)
-  $('#message').css('text-align', 'center')
+  $('#team-message').html(`<div class="alert alert-danger" role="alert">There was an issue updating your team</div>`)
+  $('#team-message').css('text-align', 'center')
   $('form').trigger('reset')
   setTimeout(() => {
     $('#message').html('')
@@ -64,9 +64,18 @@ const deleteTeamFailure = function () {
 
 const getTeamsSuccess = function (data) {
   $('#team-message').empty()
-  // loop through data.teams declaring team as function name
-  data.teams.forEach((team) => {
-    const teamsHtml = `
+  // check if data.teams is an empty array and show a message if so.
+  if (data.teams.length < 1) {
+    $('#team-message').html(`<div class="alert alert-danger" role="alert">You have no Teams! Create Some!</div>`)
+    setTimeout(() => {
+      $('#team-message').html('')
+    }, 3000
+    )
+    $('#team-message').removeClass('hidden')
+  } else {
+    // loop through data.teams declaring team as function name
+    data.teams.forEach((team) => {
+      const teamsHtml = `
       <div class="Team">
         <p>name: ${team.name}</p>
         <p>location: ${team.location}</p>
@@ -78,18 +87,18 @@ const getTeamsSuccess = function (data) {
           </fieldset>
         </form>
       </div>`
-    // appends teamHtml to the end of string
-    $('#team-message').append(teamsHtml)
-    $(`#delete-team-${team.id}`).on('submit', () => {
+      // appends teamHtml to the end of string
+      $('#team-message').append(teamsHtml)
+      $(`#delete-team-${team.id}`).on('submit', () => {
       // Do the delete ajax
+      })
     })
-  })
-  $('#team-message').css('text-align', 'center')
-  $('#team-message').removeClass('hidden')
-  $('.hide-teams').removeClass('hidden')
-  $('.hide-teams').show()
+    $('#team-message').css('text-align', 'center')
+    $('#team-message').removeClass('hidden')
+    $('.hide-teams').removeClass('hidden')
+    $('.hide-teams').show()
+  }
 }
-
 const getTeamsFailure = function () {
   $('#message').html(`<div class="alert alert-danger" role="alert">There was an issue getting your teams</div>`)
   $('#team-message').css('text-align', 'center')

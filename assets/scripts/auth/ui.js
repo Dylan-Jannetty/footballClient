@@ -65,9 +65,8 @@ const signInFailure = function () {
 }
 
 const changePasswordSuccess = function () {
-  $('#message').html(`<div class="alert alert-success" role="alert">Password succesfully changed</div>`)
-  $('#message').css('background-color', 'green')
-  $('#message').css('text-align', 'center')
+  $('#team-message').html(`<div class="alert alert-success" role="alert">Password succesfully changed</div>`)
+  $('#team-message').css('text-align', 'center')
   setTimeout(() => {
     $('#message').html('')
   }, 3000
@@ -76,9 +75,8 @@ const changePasswordSuccess = function () {
 }
 
 const changePasswordFailure = function () {
-  $('#message').html(`<div class="alert alert-danger" role="alert">There was an issue changing your password</div>`)
-  $('#message').css('background-color', 'red')
-  $('#message').css('text-align', 'center')
+  $('#team-message').html(`<div class="alert alert-danger" role="alert">There was an issue changing your password</div>`)
+  $('#team-message').css('text-align', 'center')
   setTimeout(() => {
     $('#message').html('')
   }, 3000
